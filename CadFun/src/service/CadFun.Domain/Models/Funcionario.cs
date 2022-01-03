@@ -32,7 +32,7 @@ namespace CadFun.Domain.Models
         }
         public void SetCpf(string value)
         {
-            if (value.IsCpf()) throw new DomainException("Cpf invalido");
+            if (!value.IsCpf()) throw new DomainException("Cpf invalido");
             Cpf = value;
         }
         public void SetEmail(string value)

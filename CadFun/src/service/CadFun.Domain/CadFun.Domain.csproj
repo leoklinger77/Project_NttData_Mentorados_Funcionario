@@ -8,4 +8,8 @@
     <PackageReference Include="FluentValidation" Version="10.3.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Notifier\" />
+  </ItemGroup>
+
 </Project>

@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 
 namespace CadFun.Domain.Interfaces
 {
-    public interface IFuncionarioRepository : IRepositoryBase<Funcionario>
+    public interface IFuncionarioService
     {
         Task<IEnumerable<Funcionario>> ToList();
+
+        Task AddFuncionario(Funcionario funcionario);
     }
 }
