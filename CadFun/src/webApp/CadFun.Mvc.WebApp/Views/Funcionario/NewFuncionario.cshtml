@@ -1,0 +1,52 @@
+﻿@model NewFuncionarioViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="display-4">Novo Funcionario</h1>
+
+<form asp-action="NewFuncionario" method="post">
+    <div class="form-group">
+        <label asp-for="NomeCompleto"></label>
+        <input asp-for="NomeCompleto" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cpf"></label>
+        <input asp-for="Cpf" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nascimento"></label>
+        <input asp-for="Nascimento" type="date" class="form-control">
+    </div>
+
+    <div class="form-check">
+        <input asp-for="Ativo" class="form-check-input" type="radio" value="1" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+            Ativo
+        </label>
+    </div>
+    <div class="form-check">
+        <input asp-for="Ativo" class="form-check-input" type="radio" value="0">
+        <label class="form-check-label" for="flexRadioDefault2">
+            Inativo
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Criar</button>
+
+</form>
+
+@section Scripts {
+
+        @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -27,7 +27,7 @@ namespace CadFun.Domain.Models
         public void SetNomeCompleto(string value)
         {
             //Validação
-            if (!string.IsNullOrEmpty(value)) throw new DomainException("Nome completo invalido");
+            if (string.IsNullOrEmpty(value)) throw new DomainException("Nome completo invalido");
             NomeCompleto = value;
         }
         public void SetCpf(string value)

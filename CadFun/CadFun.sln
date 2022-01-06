@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadFun.Domain", "src\servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadFun.Infrastructure", "src\service\CadFun.Infrastructure\CadFun.Infrastructure.csproj", "{5573D00F-AD98-48F4-AB3B-CF5DB9BFDE53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadFun.Mvc.WebApp", "src\webApp\CadFun.Mvc.WebApp\CadFun.Mvc.WebApp.csproj", "{110742F6-1D5F-4444-9579-74E7A4DC0332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadFun.Mvc.WebApp", "src\webApp\CadFun.Mvc.WebApp\CadFun.Mvc.WebApp.csproj", "{110742F6-1D5F-4444-9579-74E7A4DC0332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

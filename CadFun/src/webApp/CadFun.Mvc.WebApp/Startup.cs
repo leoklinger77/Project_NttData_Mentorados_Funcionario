@@ -1,5 +1,10 @@
+using CadFun.Domain.Interfaces;
+using CadFun.Domain.Services;
+using CadFun.Infrastructure.Data;
+using CadFun.Infrastructure.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,7 +31,21 @@ namespace CadFun.Mvc.WebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddControllersWithViews();
+
+            services.AddDbContext<CodFunContext>(x => x.UseSqlServer(Configuration.GetConnectionString("MinhaConectionString")));
+
+
+            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IFuncionarioService, FuncionarioService>();
+            services.AddScoped<INotificationService, NotificationService>();
+
+            services.AddScoped<CodFunContext>();
+
+
+
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,7 +65,8 @@ namespace CadFun.Mvc.WebApp
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {
